@@ -3,7 +3,7 @@ import "./CommentGroup.css";
 import { Comment } from "./Comment";
 import { SendComment } from "./SendComment";
 
-export function CommentGroup({ data, parent }) {
+export function CommentGroup({ data, parent, addComment, deleteComment }) {
     let comments = Object.keys(data).filter((key) => {
         return data[key].parent === parent;
     });
@@ -11,7 +11,7 @@ export function CommentGroup({ data, parent }) {
     return (
         <div className="comment-group">
             <div className="comment-add">
-                <SendComment />
+                <SendComment parent={parent} addComment={addComment} />
             </div>
             
             <ul className="comment-list">
@@ -22,6 +22,8 @@ export function CommentGroup({ data, parent }) {
                                 <Comment
                                     data={data}
                                     id={key}
+                                    addComment={addComment}
+                                    deleteComment={deleteComment}
                                 />
                             </li>
                         );

@@ -18,8 +18,11 @@
     border-radius: 0.25rem;
     font-size: 1rem;
     font-family: sans-serif;
-    font-weight: 600;
     resize: none;
+}
+
+.comment-input::placeholder, .comment-input[name="name"] {
+    font-weight: 600;
 }
 
 .new-comment-actions {
@@ -39,4 +42,14 @@
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+.comment-action-button:hover {
+    background-color: #0066CC;
+}
+
+.comment-action-button:disabled {
+    background-color: #e5e5e5;
+    color: #333;
+    cursor: not-allowed;
 }

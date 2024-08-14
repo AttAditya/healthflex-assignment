@@ -2,7 +2,7 @@ import "./Comment.css";
 import { FaTrash } from "react-icons/fa";
 import { CommentGroup } from "./CommentGroup";
 
-export function Comment({ data, id }) {
+export function Comment({ data, id, addComment, deleteComment }) {
     let name = data[id].name;
     let comment = data[id].comment;
     let date = data[id].date;
@@ -29,13 +29,13 @@ export function Comment({ data, id }) {
                     <span className="comment-action">Edit</span>
                 </div>
 
-                <button className="comment-delete">
+                <button className="comment-delete" onClick={() => deleteComment(id)}>
                     <FaTrash />
                 </button>
             </div>
 
             <div className="comment-replies">
-                <CommentGroup data={data} parent={id} />
+                <CommentGroup data={data} parent={id} addComment={addComment} />
             </div>
         </div>
     );
