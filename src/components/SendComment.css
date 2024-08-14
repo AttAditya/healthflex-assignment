@@ -1,0 +1,42 @@
+.send-comment {
+    display: flex;
+
+    flex-direction: column;
+    gap: 0.75rem;
+
+    padding: 1rem 2rem;
+}
+
+.send-comment-title {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.comment-input {
+    padding: 0.75rem 1rem;
+    border: 0.15rem solid #e5e5e5;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    resize: none;
+}
+
+.new-comment-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.comment-action-button {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-family: sans-serif;
+    cursor: pointer;
+    background-color: #3388FF;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
