@@ -52,3 +52,8 @@
     align-items: center;
     cursor: pointer;
 }
+
+.comment-replies:not(:empty) {
+    padding: 2rem 0;
+    padding-left: 4rem;
+}

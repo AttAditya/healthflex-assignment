@@ -1,7 +1,12 @@
-import { FaTrash } from "react-icons/fa";
 import "./Comment.css";
+import { FaTrash } from "react-icons/fa";
+import { CommentGroup } from "./CommentGroup";
 
-export function Comment({ id, name, comment, date, replies, CommentGroup }) {
+export function Comment({ data, id }) {
+    let name = data[id].name;
+    let comment = data[id].comment;
+    let date = data[id].date;
+
     return (
         <div className="comment-araea">
             <div className="comment box">
@@ -29,11 +34,9 @@ export function Comment({ id, name, comment, date, replies, CommentGroup }) {
                 </button>
             </div>
 
-            {
-                !replies ? "" : (
-                    <CommentGroup data={replies} />
-                )
-            }
+            <div className="comment-replies">
+                <CommentGroup data={data} parent={id} />
+            </div>
         </div>
     );
 }

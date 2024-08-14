@@ -4,36 +4,38 @@ import { CommentGroup } from './components/CommentGroup';
 function App() {
     let data = {
         "comment1" : {
-            "id": "comm1",
+            "id": "comment1",
             "name": "John Doe",
             "comment": "This is a comment.",
             "date": "2021-01-01",
-            "replies": {
-                "reply1" : {
-                    "id": "rep1",
-                    "name": "Jane Doe",
-                    "comment": "This is a reply.",
-                    "date": "2021-01-01"
-                }
-            }
+            "parent": "#HEAD"
         },
         "comment2" : {
-            "id": "comm2",
+            "id": "comment2",
             "name": "Jane Doe",
             "comment": "This is another comment.",
-            "date": "2021-01-02"
+            "date": "2021-01-02",
+            "parent": "#HEAD"
         },
         "comment3" : {
-            "id": "comm3",
+            "id": "comment3",
             "name": "John Doe",
             "comment": "This is a reply.",
-            "date": "2021-01-03"
+            "date": "2021-01-03",
+            "parent": "#HEAD"
+        },
+        "reply1" : {
+            "id": "reply1",
+            "name": "Jane Doe",
+            "comment": "This is a reply.",
+            "date": "2021-01-01",
+            "parent": "comment1"
         }
     };
     
     return (
-        <div className="App">
-            <CommentGroup data={data} />
+        <div className="app">
+            <CommentGroup data={data} parent="#HEAD" />
         </div>
     );
 }
